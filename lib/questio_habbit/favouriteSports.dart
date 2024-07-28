@@ -31,6 +31,7 @@ class Favouritesports extends StatelessWidget {
                 backgroundColor: Colors.blue,
               ),
             ),
+            SizedBox(height: 20)
           ],
         ),
       ),
