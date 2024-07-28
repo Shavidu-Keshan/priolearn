@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Favouritesports extends StatelessWidget {
+class Favourit_dish extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +10,7 @@ class Favouritesports extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Do you have a favourite sport?\nIf so, what is it?',
+              'Do you have a favorite dish or type of cuisine you love?',
               style: TextStyle(fontSize: 24),
               textAlign: TextAlign.center,
             ),
@@ -31,7 +31,7 @@ class Favouritesports extends StatelessWidget {
                 backgroundColor: Colors.blue,
               ),
             ),
-            SizedBox(height: 180),
+            SizedBox(height: 120),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(5, (index) {
