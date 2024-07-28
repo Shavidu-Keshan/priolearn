@@ -10,6 +10,7 @@ class SurveySummaryScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 20), // Added SizedBox for spacing at the top
               Text(
                 'You answered to our questions as following',
                 style: TextStyle(fontSize: 20),
@@ -70,9 +71,9 @@ class QuestionAnswerWidget extends StatelessWidget {
           question,
           style: TextStyle(fontSize: 16),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 1),
         Text(
-          'Answer',
+          '',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         TextField(
