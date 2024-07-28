@@ -31,7 +31,21 @@ class Favouritesports extends StatelessWidget {
                 backgroundColor: Colors.blue,
               ),
             ),
-            SizedBox(height: 20)
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(5, (index) {
+                return Container(
+                  margin: EdgeInsets.symmetric(horizontal: 2.0),
+                  width: 8.0,
+                  height: 8.0,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: index == 0 ? Colors.blue : Colors.grey,
+                  ),
+                );
+              }),
+            ),
           ],
         ),
       ),
