@@ -13,7 +13,24 @@ class Favouritesports extends StatelessWidget {
               'Do you have a favourite sport?\nIf so, what is it?',
               style: TextStyle(fontSize: 24),
               textAlign: TextAlign.center,
-            )
+            ),
+            SizedBox(
+              height: 80,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: '',
+              ),
+            ),
+            SizedBox(height: 140),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Next'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
+            ),
           ],
         ),
       ),
