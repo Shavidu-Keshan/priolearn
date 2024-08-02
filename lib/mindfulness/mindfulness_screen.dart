@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class MindfulnessScreen extends StatefulWidget {
   @override
@@ -6,7 +7,28 @@ class MindfulnessScreen extends StatefulWidget {
 }
 
 class _MindfulnessScreenState extends State<MindfulnessScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 5;
+  String _quote = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchQuote();
+  }
+
+  void _fetchQuote() async {
+    try {
+      DocumentSnapshot snapshot = await FirebaseFirestore.instance
+          .collection('quotes')
+          .doc('today')
+          .get();
+      setState(() {
+        _quote = snapshot['quote'];
+      });
+    } catch (e) {
+      print('Error fetching quote: $e');
+    }
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -46,7 +68,7 @@ class _MindfulnessScreenState extends State<MindfulnessScreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
-                "Keep your face always toward the sunshine, and shadows will fall behind you.\n\n-Walt Whitman",
+                _quote,
                 style: TextStyle(fontSize: 16),
                 textAlign: TextAlign.center,
               ),
